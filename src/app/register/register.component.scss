@@ -1,0 +1,72 @@
+.register-content {
+    --background: linear-gradient(to bottom right, #e0f2f1, #f1f8e9);
+    font-family: 'Segoe UI', sans-serif;
+    height: 100%;
+  }
+  
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .register-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .register-header h2 {
+    color: #2e7d32;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .register-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #388e3c;
+    margin-bottom: 2rem;
+  }
+  
+  ion-item {
+    --background: #f1f8e9;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 4px 10px;
+    --color: #2e7d32;
+  }
+  
+  ion-label {
+    color: #4e944f;
+    font-weight: 500;
+  }
+  
+  ion-input {
+    color: #1b5e20;
+  }
+  
+  .register-btn {
+    --background: #4CAF50;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .footer-links {
+    margin-top: 18px;
+    text-align: center;
+  }
+  
+  .footer-links a {
+    color: #2e7d32;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: none !important; /* esto evita las mayúsculas forzadas */
+}

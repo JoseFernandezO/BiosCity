@@ -1,0 +1,30 @@
+<ion-content class="login-content fullscreen">
+  <div class="center-container">
+    <div class="login-card">
+      <div class="login-header">
+        <h2>Hola de nuevo</h2>
+        <h1>Inicia sesión</h1>
+      </div>
+
+      <form (ngSubmit)="login()">
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" class="login-btn">
+          INICIAR SESIÓN
+        </ion-button>
+      </form>
+
+      <div class="footer-links">
+        <a routerLink="/register">Regístrate aquí</a>
+      </div>
+    </div>
+  </div>
+</ion-content>
