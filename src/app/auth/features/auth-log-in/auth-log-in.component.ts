@@ -23,9 +23,7 @@ interface LogInForm {
 })
 export default class AuthLogInComponent {
   private _formBuilder = inject(FormBuilder);
-
   private _authService = inject(AuthService);
-
   private _router = inject(Router);
 
   form = this._formBuilder.group<LogInForm>({
@@ -37,21 +35,46 @@ export default class AuthLogInComponent {
   });
 
   async submit() {
-    if (this.form.invalid) return;
+    alert('Paso 1: Entrando a submit()');
+
+    if (this.form.invalid) {
+      alert('Paso 2: Formulario inválido');
+      return;
+    }
+
+    alert('Paso 3: Formulario válido');
 
     try {
-      const { error } = await this._authService.logIn({
-        email: this.form.value.email ?? '',
-        password: this.form.value.password ?? '',
+      const email = this.form.value.email ?? '';
+      const password = this.form.value.password ?? '';
+
+      alert('Paso 4: Datos que se enviarán\n' + email + '\n' + password);
+
+      const { error, data } = await this._authService.logIn({
+        email,
+        password,
       });
 
-      if (error) throw error;
+      alert('Paso 5: Respuesta recibida');
 
+      if (error) {
+        alert('Paso 6: Error recibido\n' + error.message);
+        throw error;
+      }
+
+      alert('Paso 7: Login exitoso, redirigiendo...');
       this._router.navigateByUrl('/');
     } catch (error) {
+      alert('Paso 8: catch atrapó un error');
       if (error instanceof Error) {
-        console.log(error);
+        alert('Paso 9: Error: ' + error.message);
+        console.error('Error de login:', error);
       }
     }
   }
+
+  debug(paso: number) {
+    alert('Paso ' + paso);
+  }
+
 }

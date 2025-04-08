@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-export default [
+export default  [
   {
     path: 'sign-up',
     loadComponent: () => import('../auth-sign-up/auth-sign-up.component'),

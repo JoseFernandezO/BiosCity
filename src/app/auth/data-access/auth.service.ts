@@ -14,8 +14,19 @@ export class AuthService {
     return this._supabaseClient.auth.signUp(credentials);
   }
 
-  logIn(credentials: SignUpWithPasswordCredentials) {
-    return this._supabaseClient.auth.signInWithPassword(credentials);
+  async logIn(credentials: SignUpWithPasswordCredentials) {
+    alert('Paso 3.1: Entra al AuthService.logIn');
+    const { data, error } = await this._supabaseClient.auth.signInWithPassword(credentials);
+
+    if (error) {
+      alert('Paso 3.2: Error al iniciar sesión');
+      console.error('Error al iniciar sesión', error.message);
+    } else {
+      alert('Paso 3.3: Login exitoso en Supabase');
+      console.log('Login exitoso:', data);
+    }
+
+    return { data, error };
   }
 
   signOut() {
