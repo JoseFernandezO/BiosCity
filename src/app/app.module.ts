@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module'; // Aquí defines las rutas
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [], // ← Standalone components no se declaran aquí
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, // ← Rutas que cargan componentes standalone
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], // ← Este es el componente raíz
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,10 @@
+<video #video autoplay muted playsinline width="100%"></video>
+
+<div *ngIf="photoDataUrl">
+  <img [src]="photoDataUrl" alt="Vista previa" width="100%" />
+</div>
+
+<div style="margin-top: 16px;">
+  <button (click)="takePhoto()">📸 Tomar Foto</button>
+  <button (click)="goBackToMenu()">🔙 Volver</button>
+</div>
