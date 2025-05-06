@@ -18,12 +18,43 @@
         >
       </a>
 
+      <div class="flex flex-col items-center justify-center py-6">
+        <div *ngIf="cameraPermissionGranted && locationPermissionGranted; else permissionsPending">
+          <p class="text-green-600 font-semibold">Permisos otorgados ✅</p>
+          <button
+            class="mt-4 text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            (click)="goToDeviceUsage()"
+          >
+            Ir a Cámara y GPS
+          </button>
+        </div>
+
+        <ng-template #permissionsPending>
+          <p class="text-yellow-500 font-semibold">Solicitando permisos de cámara y ubicación...</p>
+          <div *ngIf="errorMessage" class="text-red-500 mt-2">{{ errorMessage }}</div>
+        </ng-template>
+      </div>
+
+      <button
+        class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        routerLink="/device-usage"
+      >
+        Ir a Cámara/GPS
+      </button>
+
+
+
       <button
         class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
         (click)="logOut()"
       >
         Cerrar sesion
       </button>
+
+
+
+
+
     </div>
   </nav>
 
@@ -66,6 +97,9 @@
         </div>
       </form>
     </div>
+
+
+
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg pt-20">
       <table
@@ -132,4 +166,9 @@
       </table>
     </div>
   </div>
+
+
+
+
+
 </section>

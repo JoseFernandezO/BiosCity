@@ -12,4 +12,9 @@ export class SupabaseService {
       environment.SUPABASE_KEY,
     );
   }
+
+
+
 }
+
+

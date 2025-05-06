@@ -1,0 +1,33 @@
+.device-usage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px #0004;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      padding: 0.5rem 1rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 6px #0003;
+  }
+}

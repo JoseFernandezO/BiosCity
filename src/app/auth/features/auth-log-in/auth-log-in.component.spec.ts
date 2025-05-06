@@ -1,6 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 
-import { AuthLogInComponent } from './auth-log-in.component';
+import AuthLogInComponent from './auth-log-in.component';
+import { AuthService } from '../../data-access/auth.service';
 
 describe('AuthLogInComponent', () => {
   let component: AuthLogInComponent;
@@ -8,10 +11,14 @@ describe('AuthLogInComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AuthLogInComponent]
-    })
-    .compileComponents();
-    
+      imports: [AuthLogInComponent], // standalone
+      providers: [
+        { provide: FormBuilder, useClass: FormBuilder },
+        { provide: AuthService, useValue: { logIn: () => Promise.resolve({}) } },
+        { provide: Router, useValue: { navigateByUrl: () => {} } },
+      ]
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AuthLogInComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
