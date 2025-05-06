@@ -1,27 +1,112 @@
-# SupabaseNotes
+🎯 Introducción
+Bios City es una aplicación móvil desarrollada con Angular y Ionic, que permite a los usuarios reportar especies animales en su entorno, asociándolas con su ubicación geográfica. Con inteligencia artificial, las imágenes tomadas por los usuarios son analizadas para identificar especies, especialmente las en peligro de extinción.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
+La app busca conectar a los ciudadanos con ONGs y organizaciones ambientales para mejorar la conservación de la biodiversidad.
 
-## Development server
+📌 Propósito del Proyecto
+El propósito de Bios City es resolver la dificultad para reportar especies, especialmente aquellas en peligro de extinción, debido a la falta de canales de comunicación eficaces y al desconocimiento de la fauna local.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Bios City tiene como objetivos:
 
-## Code scaffolding
+Facilitar la recolección de datos sobre fauna silvestre.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Alertar sobre especies en riesgo.
 
-## Build
+Conectar a ciudadanos con ONGs para la conservación.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Crear conciencia sobre la biodiversidad urbana.
 
-## Running unit tests
+🧰 Tecnologías Usadas
+Frontend: Angular + Ionic Framework
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Backend / Servicios: Supabase (Base de datos y autenticación)
 
-## Running end-to-end tests
+Lenguaje: TypeScript
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+IDE: Visual Studio Code (Ionic), IntelliJ IDEA (Integración con Supabase)
 
-## Further help
+Servicios Complementarios:
+Supabase Storage: Para el almacenamiento y subida de imágenes.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Geolocalización (HTML5 / Capacitor Plugins): Para obtener la ubicación del usuario.
+
+IA para Identificación de Especies: En desarrollo, para identificar especies en las imágenes.
+
+💻 Entorno de Desarrollo
+Node.js v18+
+
+Ionic CLI v7+
+
+Angular CLI v16+
+
+Supabase CLI (opcional)
+
+Capacitor para acceso a cámara y ubicación
+
+IDEs recomendados: IntelliJ IDEA y Visual Studio Code
+
+🗂️ Estructura de Archivos
+plaintext
+Copiar
+src
+  app
+    auth
+      data-access
+        auth-service.ts
+      features
+        auth-log-in
+          auth-log-in.component.scss
+          auth-log-in.component.spec.ts
+          auth-log-in.component.ts
+          auth-log-in.component.html
+        auth-sign-up
+          auth-sign-up.component.scss
+          auth-sign-up.component.spec.ts
+          auth-sign-up.component.ts
+          auth-sign-up.component.html
+    notes
+      data-access
+        notes.service.ts
+      features
+        note-list
+          note-list.component.html
+          note-list.component.spec.ts
+          note-list.component.ts
+        note-shell
+          note-routing.ts
+    shared
+      data-access
+        supabase.service.ts
+      guards
+        auth.guards.ts
+    app.component.scss
+    app.component.spec.ts
+    app.component.ts
+    app.config.ts
+    app.routes.ts
+    app-routing.module.ts
+  assets
+  environments
+📷 Funcionamiento General
+Inicio de sesión o registro: Los usuarios se autentican utilizando Supabase Auth.
+
+Acceso a la cámara: El usuario toma una foto de una especie.
+
+Geolocalización: Se obtiene la ubicación GPS del usuario al momento de la captura.
+
+Subida a la nube: La imagen se sube automáticamente a Supabase Storage.
+
+Registro en la base de datos: Los datos (imagen, ubicación, usuario) se almacenan en la base de datos.
+
+Visualización de notas y reportes: Los usuarios pueden ver los reportes y notas en la aplicación.
+
+🙌 Contribuciones
+¡Nos encantaría contar con tu ayuda! Si estás interesado en colaborar, puedes:
+
+Proponer mejoras en la identificación de especies.
+
+Ayudar con el diseño de UI/UX.
+
+Mejorar la seguridad y el rendimiento del sistema.
+
+Para contribuir, haz un fork del repositorio y crea un pull request con tus cambios.
